@@ -12,7 +12,7 @@ model = Ner("out_base")
 def predict():
     text = request.json["text"]
     try:
-        out = str(model.predict(text))
+        out = model.predict(text)
         return jsonify({"result":out})
     except Exception as e:
         print(e)
